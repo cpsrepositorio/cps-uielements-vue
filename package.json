@@ -14,27 +14,29 @@
   "type": "module",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "README.md",
     "dist"
   ],
   "main": "./dist/cps-uielements-vue.umd.cjs",
   "module": "./dist/cps-uielements-vue.es.js",
-  "typings": "./dist/cps-uielements-vue.d.ts",
+  "types": "./dist/cps-uielements-vue.d.ts",
   "exports": {
-    "require": "./dist/cps-uielements-vue.umd.cjs",
-    "import": "./dist/cps-uielements-vue.es.js",
-    "types": "./dist/cps-uielements-vue.d.ts"
+    ".": {
+      "require": "./dist/cps-uielements-vue.umd.cjs",
+      "import": "./dist/cps-uielements-vue.es.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite --port 6005",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "build": "run-p type-check build:vue build:types",
+    "build": "run-p type-check build:vue",
     "build:vue": "vite build",
-    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
+    "build:types": "vue-tsc --emitDeclarationOnly --declaration",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:fix": "npm run lint --fix",
@@ -75,9 +77,10 @@
     "tailwindcss": "^3.1.6",
     "typescript": "^4.7.4",
     "vite": "^3.0.3",
+    "vite-plugin-dts": "^1.4.1",
     "vite-svg-loader": "^3.4.0",
     "vue": "^3.2.37",
     "vue-loader": "^17.0.0",
-    "vue-tsc": "^0.39.0"
+    "vue-tsc": "^0.39.5"
   }
 }
