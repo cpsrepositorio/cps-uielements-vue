@@ -1,0 +1,17 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "env.d.ts",
+    "demo/**/*",
+    "module/**/*",
+    "stories/**/*",
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "paths": { "@cps/uielements-vue": ["./module/"] }
+  },
+  "references": [{ "path": "./tsconfig.config.json" }],
+  "outDir": "dist",
+  "declaration": true
+}
