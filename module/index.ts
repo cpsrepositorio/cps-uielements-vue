@@ -1,6 +1,6 @@
+import './style.css'
 import type { Component, Plugin } from 'vue'
 import * as components from './components'
-import './base.css'
 
 const ComponentsLoader: Plugin = {
   install(app) {

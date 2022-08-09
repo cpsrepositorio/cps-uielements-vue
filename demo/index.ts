@@ -1,4 +1,4 @@
-import '@cps/uielements-vue/base.css'
+import '@cps/uielements-vue/style.css'
 import UIElements from '@cps/uielements-vue'
 import { createApp } from 'vue'
 import App from './App.vue'
