@@ -1,6 +1,7 @@
+import type { Parameters } from '@storybook/api'
 import '../module/style.css'
 
-export const parameters = {
+export const parameters: Parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   controls: {
