@@ -25,6 +25,7 @@ const config: StorybookViteConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
+      base: process.env.BASE_URL || config.base,
       resolve: {
         alias: {
           '@cps/uielements-vue': path.resolve(__dirname, './module/')
