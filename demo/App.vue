@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import SvgFlow from './assets/flow.svg'
+import { $ref } from 'vue/macros'
 import ProgressIndicator from '../module/components/ProgressIndicator.vue'
+import TextField from '../module/components/TextField.vue'
+import SvgFlow from './assets/flow.svg'
+
+const name = $ref('Hello!')
 </script>
 
 <template>
@@ -11,9 +15,8 @@ import ProgressIndicator from '../module/components/ProgressIndicator.vue'
     </Button>
 
     <ProgressIndicator size="small" class="text-accent" />
-    <ProgressIndicator size="medium" class="text-accent" />
-    <ProgressIndicator size="large" class="text-accent" />
 
-    Hello world!
+    <TextField v-model="name" />
+    <div>{{ name }}</div>
   </div>
 </template>
